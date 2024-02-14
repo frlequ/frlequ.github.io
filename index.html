@@ -29,15 +29,24 @@
             padding: 20px;
         }
 
+        .features-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
         .feature-box {
-            display: inline-block;
-            width: calc(100% / 3 - 20px);
+            width: calc(33.333% - 20px);
             padding: 20px;
             box-sizing: border-box;
             margin: 10px;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .mdi {
@@ -47,15 +56,16 @@
         }
 
         .button {
-            display: inline-block;
             background-color: var(--button-bg-color);
             color: var(--button-text-color);
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px;
             font-size: 16px;
             cursor: pointer;
+            display: block; /* Make the button block level for centering */
+            width: auto; /* Adjust width as needed */
+            margin: 20px auto 0; /* Center the button and add space above */
         }
     </style>
 </head>
@@ -64,24 +74,26 @@
         <h1>Home Assistant Moj Elektro Integration</h1>
         <p>This custom component for Home Assistant allows users to connect with Moj Elektro for electricity data management.</p>
         
-        <div class="feature-box">
-            <i class="mdi mdi-flash-outline"></i>
-            <h3>Real-Time Monitoring</h3>
-            <p>View your current electricity consumption directly on your dashboard.</p>
-        </div>
+        <div class="features-row">
+            <div class="feature-box">
+                <i class="mdi mdi-flash-outline"></i>
+                <h3>Real-Time Monitoring</h3>
+                <p>View your current electricity consumption directly on your dashboard.</p>
+            </div>
 
-        <div class="feature-box">
-            <i class="mdi mdi-chart-line"></i>
-            <h3>Data Analysis</h3>
-            <p>Analyze historical consumption data for informed decisions.</p>
-        </div>
+            <div class="feature-box">
+                <i class="mdi mdi-chart-line"></i>
+                <h3>Data Analysis</h3>
+                <p>Analyze historical consumption data for informed decisions.</p>
+            </div>
 
-        <div class="feature-box">
-            <i class="mdi mdi-currency-usd"></i>
-            <h3>Cost Tracking</h3>
-            <p>Keep track of your electricity spending with detailed breakdowns.</p>
+            <div class="feature-box">
+                <i class="mdi mdi-currency-usd"></i>
+                <h3>Cost Tracking</h3>
+                <p>Keep track of your electricity spending with detailed breakdowns.</p>
+            </div>
         </div>
-        </br>
+        
         <a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Add to Home Assistant</a>
     </div>
 </body>
