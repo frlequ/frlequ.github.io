@@ -3,96 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Assistant MojeElektro Integration</title>
+    <title>Home Assistant Moj Elektro Integration</title>
     <style>
         :root {
-            --bg-color: #121212;
-            --text-color: #ffffff;
-            --accent-color: #222222;
-            --link-color: #1E90FF;
-            --link-hover-color: #00BFFF;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --button-bg-color: #000000;
+            --button-text-color: #ffffff;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: var(--font-family);
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            line-height: 1.6;
+            text-align: center;
         }
 
         .container {
-            max-width: 800px;
             margin: auto;
-            background-color: #1a1a1a;
             padding: 20px;
+        }
+
+        .feature-box {
+            display: inline-block;
+            width: 30%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 10px;
+            border: 2px solid #000;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        h1, p {
-            text-align: center;
+        .feature-box img {
+            width: 50px;
+            height: 50px;
         }
 
-        a {
-            color: var(--link-color);
+        .feature-box h3 {
+            margin: 10px 0;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            padding: 10px 20px;
             text-decoration: none;
-            border-bottom: 2px solid var(--accent-color);
-            transition: color 0.3s ease, border-color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--link-hover-color);
-            border-bottom-color: var(--link-hover-color);
-        }
-
-        header {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            padding: 10px 0;
-            border-radius: 8px 8px 0 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            font-size: 0.8em;
-            color: #aaa;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <header>
+    <div class="container">
         <h1>Home Assistant Moj Elektro Integration</h1>
-    </header>
-    <article>
-        <p>The Home Assistant Moj Elektro Integration is a groundbreaking custom component designed for Home Assistant users seeking to enhance their smart home experience through seamless integration with Moj Elektro, Slovakia's prominent electricity distributor. This innovative integration bridges the gap between Home Assistant's extensive smart home capabilities and Moj Elektro's efficient energy management services, offering users an unprecedented level of control and visibility over their electricity usage and costs.</p>
+        <p>This custom component for Home Assistant allows users to connect with Moj Elektro for electricity data management.</p>
         
-        <p>Developed by a passionate Home Assistant community member, this integration taps into Moj Elektro's API to fetch real-time and historical electricity data, enabling users to monitor their consumption patterns, costs, and other crucial metrics directly from the Home Assistant dashboard. The project embodies the essence of smart home automation and energy management, aligning with the growing trend of eco-conscious living and the need for more sustainable energy consumption practices.</p>
-        
-        <h2>Key Features and Benefits</h2>
-        <p>The Moj Elektro integration for Home Assistant comes packed with features designed to empower users with comprehensive energy management tools:</p>
-        <ul>
-            <li><strong>Real-Time Monitoring:</strong> Keep tabs on your current electricity consumption, with data updates available directly on your Home Assistant dashboard. This feature allows users to identify high usage periods and adjust their consumption habits accordingly.</li>
-            <li><strong>Historical Data Analysis:</strong> Access detailed historical consumption data to analyze trends, compare usage over different periods, and make informed decisions about your electricity use. This analysis can lead to significant energy savings and a reduction in electricity bills.</li>
-            <li><strong>Cost Tracking:</strong> Stay informed about your electricity costs with detailed breakdowns of your spending. This feature is invaluable for budgeting and tracking the financial impact of your energy consumption.</li>
-            <li><strong>Automated Alerts and Actions:</strong> Set up custom alerts to be notified about specific consumption thresholds or unexpected usage spikes. Automate smart home actions based on these alerts to reduce consumption automatically, such as dimming lights or turning off non-essential devices during peak usage times.</li>
-        </ul>
-        
-        <h2>Getting Started</h2>
-        <p>The integration is designed with ease of installation and user-friendliness in mind. Users can add the Moj Elektro component to their Home Assistant setup by following the detailed installation instructions provided in the project's GitHub repository. The setup process involves cloning the repository, copying the necessary files into your Home Assistant configuration, and adding your Moj Elektro credentials to the configuration file. Once installed, the integration requires minimal maintenance, offering a set-it-and-forget-it solution for energy management.</p>
-        
-        <h2>Community and Support</h2>
-        <p>As an open-source project, the Home Assistant Moj Elektro Integration thrives on community involvement. Users are encouraged to contribute to the project by reporting issues, suggesting improvements, and sharing their usage experiences. The project's GitHub repository serves as a hub for collaboration, where users can also find comprehensive documentation and support from the developer and other community members.</p>
-        
-        <p>In conclusion, the Moj Elektro integration for Home Assistant is more than just a tool for monitoring electricity usage; it's a step towards smarter, more sustainable living. By providing detailed insights into energy consumption and offering tools to manage and reduce usage, this integration helps users not only to save on their electricity bills but also to contribute to a more sustainable future. Whether you're a seasoned Home Assistant user or new to home automation, the Moj Elektro integration offers a valuable addition to your smart home ecosystem.</p>
-    </article>
-    <footer>
-        © 2024 Home Assistant Moj Elektro Integration. All rights reserved.
-    </footer>
-</div>
+        <div class="feature-box">
+            <img src="monitor_icon.png" alt="Real-Time Monitoring">
+            <h3>Real-Time Monitoring</h3>
+            <p>View your current electricity consumption directly on your dashboard.</p>
+        </div>
+
+        <div class="feature-box">
+            <img src="analysis_icon.png" alt="Data Analysis">
+            <h3>Data Analysis</h3>
+            <p>Analyze historical consumption data for informed decisions.</p>
+        </div>
+
+        <div class="feature-box">
+            <img src="cost_tracking_icon.png" alt="Cost Tracking">
+            <h3>Cost Tracking</h3>
+            <p>Keep track of your electricity spending with detailed breakdowns.</p>
+        </div>
+
+        <a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Add to Home Assistant</a>
+    </div>
 </body>
 </html>
