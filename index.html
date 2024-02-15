@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Description of your page, which search engines might use as the snippet beneath the title in search results. -->
+    <meta name="description" content="Integrate your Moj Elektro electricity meter data into Home Assistant with our custom integration. Easy setup, accurate energy monitoring, and smart home automation.">
+    <!-- Although less important for ranking, you can still specify keywords relevant to your content. -->
+    <meta name="keywords" content="Home Assistant, Moj Elektro, electricity meter, smart home, energy management, custom integration">
+    <meta name="robots" content="index, follow">    
     <title>Home Assistant Moj Elektro Integration</title>
     <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +31,10 @@
 
         body {
             background-color: var(--bg-color);
+            
+background: rgb(31,48,70);
+background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, rgba(2,23,27,1) 100%);
+            
             color: var(--text-color);
             font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
             font-family: "Oswald", sans-serif;
@@ -46,7 +55,13 @@
         h1, h2{
             margin:40px;
             text-align: center;
+            text-transform: uppercase;
         }
+        h3{
+            font-size:20px;
+            text-transform: uppercase;
+        }
+        
         .container {
             max-width: 800px;
             margin: auto;
@@ -58,6 +73,7 @@
             justify-content: center;
             flex-wrap: wrap;
             margin: -10px;
+            
         }
 
         .feature-box {
@@ -80,7 +96,7 @@
 
         .mdi {
             font-size: 58px;
-            margin:50px;
+            margin:40px;
             color: var(--icon-color);
             */margin-bottom: 0px;*/
         }
@@ -98,16 +114,20 @@
             width: auto; /* Adjust width as needed */
             margin: 20px auto 0; /* Center the button and add space above */
             margin: 40px 0;
+            text-transform: uppercase;
         }
         
         .responsive-image-container {
             width: 100%; /* This makes the container width responsive to the viewport width */
             overflow: hidden; /* Ensures no overflow of the container */
+            /* Optional: Apply border-radius here if you want the container itself to have rounded corners. */
+            border-radius: 8px; /* This will give the container rounded corners. */
         }
         
         .responsive-image-container img {
             width: 100%; /* This makes the image responsive to the container's width */
             height: auto; /* Maintains the aspect ratio of the image */
+            border-radius: 8px; /* This gives the image rounded corners. */
         }
     </style>
 </head>
