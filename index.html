@@ -13,7 +13,113 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<script>
 
+var canvas = document.getElementById("canvas"),
+    ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+var stars = [], // Array that contains the stars
+    FPS = 60, // Frames per second
+    x = 100, // Number of stars
+    mouse = {
+      x: 0,
+      y: 0
+    };  // mouse location
+
+// Push stars to array
+
+for (var i = 0; i < x; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1 + 1,
+    vx: Math.floor(Math.random() * 50) - 25,
+    vy: Math.floor(Math.random() * 50) - 25
+  });
+}
+
+// Draw the scene
+
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  
+  ctx.globalCompositeOperation = "lighter";
+  
+  for (var i = 0, x = stars.length; i < x; i++) {
+    var s = stars[i];
+  
+    ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.fillStyle = 'black';
+    ctx.stroke();
+  }
+  
+  ctx.beginPath();
+  for (var i = 0, x = stars.length; i < x; i++) {
+    var starI = stars[i];
+    ctx.moveTo(starI.x,starI.y); 
+    if(distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
+    for (var j = 0, x = stars.length; j < x; j++) {
+      var starII = stars[j];
+      if(distance(starI, starII) < 150) {
+        //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
+        ctx.lineTo(starII.x,starII.y); 
+      }
+    }
+  }
+  ctx.lineWidth = 0.05;
+  ctx.strokeStyle = 'white';
+  ctx.stroke();
+}
+
+function distance( point1, point2 ){
+  var xs = 0;
+  var ys = 0;
+ 
+  xs = point2.x - point1.x;
+  xs = xs * xs;
+ 
+  ys = point2.y - point1.y;
+  ys = ys * ys;
+ 
+  return Math.sqrt( xs + ys );
+}
+
+// Update star locations
+
+function update() {
+  for (var i = 0, x = stars.length; i < x; i++) {
+    var s = stars[i];
+  
+    s.x += s.vx / FPS;
+    s.y += s.vy / FPS;
+    
+    if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
+    if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
+  }
+}
+
+canvas.addEventListener('mousemove', function(e){
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+// Update and draw
+
+function tick() {
+  draw();
+  update();
+  requestAnimationFrame(tick);
+}
+
+tick();
+
+</script>
     <style>
         :root {
             --bg-color: #222222;
@@ -70,9 +176,10 @@ background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, r
 
         .features-row {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             flex-wrap: wrap;
-            margin: -10px;
+            margin: 40px 0;
+            /*margin: -10px;*/
             
         }
 
@@ -80,7 +187,7 @@ background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, r
             width: calc(33.333% - 20px);
             padding: 20px;
             box-sizing: border-box;
-            margin: 10px;
+            
             border: 0px solid #e0e0e0;
             border-radius: 8px;
             background-color: rgba(189, 196, 202,0.3);
@@ -88,6 +195,7 @@ background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, r
             flex-direction: column;
             align-items: center;
             color: var(--text-color);
+            transition: background  .3s, scale .3s;
         }
 
         .feature-box p {
@@ -116,6 +224,17 @@ background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, r
             margin: 20px auto 0; /* Center the button and add space above */
             margin: 40px 0;
             text-transform: uppercase;
+            transition: background  .3s, scale .3s;
+        }
+
+
+
+        
+        .button:hover, .feature-box:hover {
+            background-color: #758290;
+            scale: 1.01;
+
+
         }
         
         .responsive-image-container {
@@ -123,13 +242,22 @@ background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, r
             overflow: hidden; /* Ensures no overflow of the container */
             /* Optional: Apply border-radius here if you want the container itself to have rounded corners. */
             border-radius: 8px; /* This will give the container rounded corners. */
-            margin-bottom:30px;
+            margin: 40px 0;
         }
         
         .responsive-image-container img {
             width: 100%; /* This makes the image responsive to the container's width */
             height: auto; /* Maintains the aspect ratio of the image */
             border-radius: 8px; /* This gives the image rounded corners. */
+        }
+        .responsive-image-container2 img {
+            width: 10%; /* This makes the image responsive to the container's width */
+            height: auto; /* Maintains the aspect ratio of the image */
+            border-radius: 8px; /* This gives the image rounded corners. */
+        }
+        canvas {
+        width:100%;
+          background: #232323;
         }
 /* Use a media query to add a breakpoint at 800px: */
 @media screen and (max-width: 600px) {
@@ -145,15 +273,22 @@ background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, r
         
         .feature-box {
             width: calc(100% - 20px);
+            margin-bottom:20px;
         }
 }        
     </style>
 </head>
 <body>
+<canvas id="canvas"></canvas>
+    
     <div class="container">
         <h1>Moj Elektro API Home Assistant Integration</h1>
         <p>
 Hey everyone! We're thrilled to share the newest update with you all for the Home Assistant Moj Elektro custom integration. This update is a real game changer! It effortlessly brings your electric utility meter data right into Home Assistant. This new version is a huge step up, making it way easier for you guys to tap into your Moj Elektro electricity data. Super exciting stuff!</p>
+
+<div class="responsive-image-container2">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Home_Assistant_logo_%282023%29.svg/1200px-Home_Assistant_logo_%282023%29.svg.png" alt="Energy Conservation Image" width="20px">
+</div>
         
         <a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Get Moj Elektro for Home Assistant</a>
 <div class="responsive-image-container">
@@ -178,12 +313,17 @@ Hey everyone! We're thrilled to share the newest update with you all for the Hom
                 <p>Easily install the integration through Home Assistant's HACS, ensuring a smooth setup process.</p>
             </div>
         </div>
+<div class="responsive-image-container">
+    <img src="https://github.com/frlequ/homeassistant-mojelektro/raw/main/assets/energy.jpg" alt="Energy Conservation Image">
         <h2>What's New?</h2>
                 <p>No more headaches with those local certificates to get access! Thanks to Informatika.si, we've upgraded this custom component to use their new API service, making everything way smoother and user-friendly. This means you'll get a better and more reliable connection to your electricity data, all within the Home Assistant ecosystem. Super cool, right?</p>
 
 
 
 <p>And here's the cherry on top – with Home Assistant Config Glow, you don't even have to mess around with YAML files anymore to tweak your settings. This custom component brings the convenience of UI configuration right at your fingertips. Imagine just clicking through options to customize your setup, no coding required. That’s pretty awesome, isn’t it? It's all about making things simpler and letting you enjoy the cool stuff without the fuss.</p>
+<h2>Open Source</h2>
+<p>Oh, and did I mention that the Home Assistant Moj Elektro custom integration is completely open source? Yeah, that's right! It's as cool as it gets. Having this gem in the open-source world means you can peek under the hood, tinker with it, or even contribute to making it better. Imagine tweaking your smart home to perfectly match your energy needs, all while being part of a community that's all about sharing and improving. It's like having the keys to the castle, allowing you to customize your energy management in ways you've never thought possible. </p>
+
 
         <a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Get Moj Elektro for Home Assistant</a>
 
