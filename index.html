@@ -65,7 +65,7 @@ background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, r
         .container {
             max-width: 800px;
             margin: auto;
-            padding: 20px;
+            padding: 20px 0;
         }
 
         .features-row {
@@ -131,6 +131,22 @@ background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, r
             height: auto; /* Maintains the aspect ratio of the image */
             border-radius: 8px; /* This gives the image rounded corners. */
         }
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 600px) {
+        h1 {
+           font-size:38px;
+            line-height:46px;
+        }
+
+        .features-row {
+        flex-direction: column;
+        
+        }
+        
+        .feature-box {
+            width: calc(100% - 20px);
+        }
+}        
     </style>
 </head>
 <body>
