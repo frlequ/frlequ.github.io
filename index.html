@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Assistant Moj Elektro Integration</title>
     <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
-    <style> 
+    <style>
         :root {
             --bg-color: #222222;
-            --text-color: #888888;
+            --text-color: #dfe0e0;
             --button-bg-color: #000000;
             --button-text-color: #ffffff;
             --icon-color: #000000;
@@ -25,6 +25,10 @@
         }
         p {
             margin:40px 0 ;
+        }
+        h1 {
+            font-size:50px;
+            line-height:40px;
         }
         h1, h2{
             margin:40px;
@@ -48,18 +52,20 @@
             padding: 20px;
             box-sizing: border-box;
             margin: 10px;
-            border: 1px solid #e0e0e0;
+            border: 0px solid #e0e0e0;
             border-radius: 8px;
-            background-color: #f5f5f5;
+            background-color: #98a2ac;
             display: flex;
             flex-direction: column;
             align-items: center;
+            color: #2d2d2d;
         }
 
         .mdi {
-            font-size: 48px;
+            font-size: 58px;
+            margin:50px;
             color: var(--icon-color);
-            margin-bottom: 10px;
+            */margin-bottom: 0px;*/
         }
 
         .button {
@@ -78,7 +84,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Home Assistant Moj Elektro Integration</h1>
+        <h1>Moj Elektro API Home Assistant Integration</h1>
         <p>We are excited to announce the latest update to the Home Assistant Moj Elektro custom integration, a game-changing tool that seamlessly integrates your electric utility meter data into Home Assistant. This enhanced version marks a significant improvement over its predecessor, simplifying the way users connect to their Moj Elektro electricity data.</p>
         
 
@@ -105,7 +111,7 @@
         <h2>What's New?</h2>
                 <p>Gone are the days of dealing with the hassle of local certificates for access. Thanks to a collaboration with Informatika.si, this updated custom component now leverages a new API service, streamlining the integration process and enhancing user experience. This means you can enjoy a smoother, more reliable connection to your electricity data, directly within the Home Assistant ecosystem.</p>
 
-        <a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Add to Home Assistant</a>
+        <a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Get Moj Elektro for Home Assistant</a>
     </div>
 </body>
 </html>
