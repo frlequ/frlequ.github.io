@@ -5,30 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Assistant Moj Elektro Integration</title>
     <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-color: #222222;
             --text-color: #dfe0e0;
-            --button-bg-color: #000000;
+            --button-bg-color: #49525b;
             --button-text-color: #ffffff;
             --icon-color: #000000;
+        }
+        .oswald-<uniquifier> {
+          font-family: "Oswald", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: <weight>;
+          font-style: normal;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            font-family: "Oswald", sans-serif;
+            letter-spacing: 0.4px;
             margin: 0;
             padding: 20px;
             line-height: 26px;
             text-align: center;
+            
         }
         p {
             margin:40px 0 ;
         }
         h1 {
-            font-size:50px;
-            line-height:40px;
+            font-size:70px;
+            line-height:66px;
         }
         h1, h2{
             margin:40px;
@@ -54,7 +67,7 @@
             margin: 10px;
             border: 0px solid #e0e0e0;
             border-radius: 8px;
-            background-color: #98a2ac;
+            background-color: #bdc4ca;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -75,27 +88,42 @@
         .button {
             background-color: var(--button-bg-color);
             color: var(--button-text-color);
-            padding: 10px 20px;
+            padding: 20px 20px;
+            
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 26px;
             cursor: pointer;
             display: block; /* Make the button block level for centering */
             width: auto; /* Adjust width as needed */
             margin: 20px auto 0; /* Center the button and add space above */
+            margin: 40px 0;
+        }
+        
+        .responsive-image-container {
+            width: 100%; /* This makes the container width responsive to the viewport width */
+            overflow: hidden; /* Ensures no overflow of the container */
+        }
+        
+        .responsive-image-container img {
+            width: 100%; /* This makes the image responsive to the container's width */
+            height: auto; /* Maintains the aspect ratio of the image */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Moj Elektro API Home Assistant Integration</h1>
-        <p>We are excited to announce the latest update to the Home Assistant Moj Elektro custom integration, a game-changing tool that seamlessly integrates your electric utility meter data into Home Assistant. This enhanced version marks a significant improvement over its predecessor, simplifying the way users connect to their Moj Elektro electricity data.</p>
+        <p>
+Hey everyone! We're thrilled to share the newest update with you all for the Home Assistant Moj Elektro custom integration. This update is a real game changer! It effortlessly brings your electric utility meter data right into Home Assistant. This new version is a huge step up, making it way easier for you guys to tap into your Moj Elektro electricity data. Super exciting stuff!</p>
         
-
-        
+        <a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Get Moj Elektro for Home Assistant</a>
+<div class="responsive-image-container">
+    <img src="https://github.com/frlequ/homeassistant-mojelektro/raw/main/assets/energy.jpg" alt="Energy Conservation Image">
+</div>
         <div class="features-row">
             <div class="feature-box">
-                <i class="mdi mdi-flash-outline"></i>
+                <i class="mdi mdi-cable-data"></i>
                 <h3>Updated API</h3>
                 <p>No more local certificates required; connect effortlessly through new API service.</p>
             </div>
@@ -107,15 +135,21 @@
             </div>
 
             <div class="feature-box">
-                <i class="mdi mdi-currency-usd"></i>
+                <i class="mdi mdi-message-cog-outline"></i>
                 <h3>HACS Supported</h3>
                 <p>Easily install the integration through Home Assistant's HACS, ensuring a smooth setup process.</p>
             </div>
         </div>
         <h2>What's New?</h2>
-                <p>Gone are the days of dealing with the hassle of local certificates for access. Thanks to a collaboration with Informatika.si, this updated custom component now leverages a new API service, streamlining the integration process and enhancing user experience. This means you can enjoy a smoother, more reliable connection to your electricity data, directly within the Home Assistant ecosystem.</p>
+                <p>No more headaches with those local certificates to get access! Thanks to Informatika.si, we've upgraded this custom component to use their new API service, making everything way smoother and user-friendly. This means you'll get a better and more reliable connection to your electricity data, all within the Home Assistant ecosystem. Super cool, right?</p>
+
+
+
+<p>And here's the cherry on top – with Home Assistant Config Glow, you don't even have to mess around with YAML files anymore to tweak your settings. This custom component brings the convenience of UI configuration right at your fingertips. Imagine just clicking through options to customize your setup, no coding required. That’s pretty awesome, isn’t it? It's all about making things simpler and letting you enjoy the cool stuff without the fuss.</p>
 
         <a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Get Moj Elektro for Home Assistant</a>
+
+        
     </div>
 </body>
 </html>
