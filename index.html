@@ -7,8 +7,8 @@
     <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #000000;
+            --bg-color: #222222;
+            --text-color: #888888;
             --button-bg-color: #000000;
             --button-text-color: #ffffff;
             --icon-color: #000000;
@@ -20,9 +20,16 @@
             font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
+            line-height: 26px;
             text-align: center;
         }
-
+        p {
+            margin:40px 0 ;
+        }
+        h1, h2{
+            margin:40px;
+            text-align: center;
+        }
         .container {
             max-width: 800px;
             margin: auto;
@@ -72,13 +79,15 @@
 <body>
     <div class="container">
         <h1>Home Assistant Moj Elektro Integration</h1>
-        <p>This custom component for Home Assistant allows users to connect with Moj Elektro for electricity data management.</p>
+        <p>We are excited to announce the latest update to the Home Assistant Moj Elektro custom integration, a game-changing tool that seamlessly integrates your electric utility meter data into Home Assistant. This enhanced version marks a significant improvement over its predecessor, simplifying the way users connect to their Moj Elektro electricity data.</p>
+        
+
         
         <div class="features-row">
             <div class="feature-box">
                 <i class="mdi mdi-flash-outline"></i>
-                <h3>Real-Time Monitoring</h3>
-                <p>View your current electricity consumption directly on your dashboard.</p>
+                <h3>Updated API Integration</h3>
+                <p>No more local certificates required; connect effortlessly through new API service.</p>
             </div>
 
             <div class="feature-box">
@@ -89,11 +98,13 @@
 
             <div class="feature-box">
                 <i class="mdi mdi-currency-usd"></i>
-                <h3>Cost Tracking</h3>
-                <p>Keep track of your electricity spending with detailed breakdowns.</p>
+                <h3>HACS Supported</h3>
+                <p>Easily install the integration through Home Assistant's HACS (Home Assistant Community Store), ensuring a smooth setup process.</p>
             </div>
         </div>
-        
+        <h2>What's New?</h2>
+                <p>Gone are the days of dealing with the hassle of local certificates for access. Thanks to a collaboration with Informatika.si, this updated custom component now leverages a new API service, streamlining the integration process and enhancing user experience. This means you can enjoy a smoother, more reliable connection to your electricity data, directly within the Home Assistant ecosystem.</p>
+
         <a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Add to Home Assistant</a>
     </div>
 </body>
