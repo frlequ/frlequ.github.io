@@ -1,0 +1,217 @@
+        :root {
+            --bg-color: #222222;
+            --text-color: #dfe0e0;
+            --button-bg-color: rgba(189, 196, 202,0.5);
+            --button-text-color: #ffffff;
+            --icon-color: #ffffff;
+			--primary-elements-back: rgba(189, 196, 202,0.3);
+			--primary-chart-back: rgba(189, 196, 202, 0.8);
+        }
+        .oswald-<uniquifier> {
+          font-family: "Oswald", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: <weight>;
+          font-style: normal;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            
+			background: rgb(31,48,70);
+			background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, rgba(2,23,27,1) 100%);
+            
+            color: var(--text-color);
+            font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            font-family: "Oswald", sans-serif;
+            letter-spacing: 0.4px;
+            margin: 0;
+            padding: 0px;
+            line-height: 26px;
+            text-align: center;
+            
+        }
+        p {
+            
+            margin:0 0 40px 0;
+            
+        }
+        h1 {
+            font-size:90px;
+            line-height:78px;
+            text-transform: uppercase;
+        }
+        h2{
+			font-size:60px;
+            margin:40px 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        h3{
+            font-size:20px;
+            text-transform: uppercase;
+        }
+        
+
+
+        .features-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            /*margin: -10px;*/
+            
+        }
+
+        .feature-box {
+            width: calc(33.333% - 20px);
+            padding: 20px;
+            box-sizing: border-box;
+            
+            border: 0px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: var(--primary-elements-back);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-color);
+            transition: background  .3s, scale .3s;
+        }
+
+        .feature-box p {
+			font-size:18px;
+            margin:0px 0 ;
+        }
+
+        .mdi {
+            font-size: 58px;
+            margin:40px;
+            color: var(--icon-color);
+            
+            */margin-bottom: 0px;*/
+        }
+
+        .button {
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            padding: 20px 20px;
+            
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 26px;
+            cursor: pointer;
+            display: block; /* Make the button block level for centering */
+            width: auto; /* Adjust width as needed */
+            margin: 20px auto 0; /* Center the button and add space above */
+            margin: 40px 0;
+            text-transform: uppercase;
+            transition: background  .3s, scale .3s;
+
+			justify-self: center;
+			align-self: center;
+        }
+
+		.cover .button{
+			
+			position: absolute;
+			bottom: 10%;	
+		}
+
+        
+        .button:hover, .feature-box:hover {
+            background-color: #758290;
+            scale: 1.01;
+
+
+        }
+        
+        .responsive-image-container {
+            width: 100%; /* This makes the container width responsive to the viewport width */
+            overflow: hidden; /* Ensures no overflow of the container */
+            /* Optional: Apply border-radius here if you want the container itself to have rounded corners. */
+            border-radius: 8px; /* This will give the container rounded corners. */
+            margin: 40px 0;
+        }
+        
+        .responsive-image-container img {
+            width: 100%; /* This makes the image responsive to the container's width */
+            height: auto; /* Maintains the aspect ratio of the image */
+            border-radius: 8px; /* This gives the image rounded corners. */
+        }
+        .responsive-image-container2 img {
+            width: 10%; /* This makes the image responsive to the container's width */
+            height: auto; /* Maintains the aspect ratio of the image */
+            border-radius: 8px; /* This gives the image rounded corners. */
+        }
+
+.dots{
+    position: fixed;
+    overflow-y: visible;
+    z-index:3;
+    height: 100px;
+    background: transparent;
+}
+
+.large-header{
+    overflow-x: hidden;
+    width:100%;
+    
+}
+
+.first {
+	font-size: 22px;
+
+}
+.main{
+    padding:40px;
+    /*background: rgb(31,48,70);*/
+	/*background: radial-gradient(circle, rgba(31,48,70,1) 0%, rgba(18,36,55,1) 30%, rgba(2,23,27,1) 100%);*/
+	/*margin: auto;*/
+	position:relative;
+	z-index:6;
+}
+
+.container {
+	max-width: 800px;
+	margin: auto;
+	/*padding: 20px 0;*/
+		z-index:4;
+		position:relative;
+		display: grid;
+		height:100%;
+}
+
+.cover{
+    width:100%;
+    min-height: 100vh; /* Adjusted to 100vh for full viewport height */
+    position:relative;
+    z-index:4;
+	background: url(https://github.com/frlequ/homeassistant-mojelektro/raw/main/assets/home-assitant-mojelektro-api.jpg) no-repeat center center fixed;
+  
+	background-size:  auto auto;
+	background-size: cover; /* Adjusted to cover for full background cover */
+}   
+.charts{
+	display:flex;
+	flex-direction:row;
+}
+.chart{
+		width:50%;
+		
+}
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 600px) {
+        h1 {
+           font-size:58px;
+            line-height:56px;
+        }
+
+        .features-row {
+        flex-direction: column;
+        
+        }
+        
+        .feature-box {
+            width: 100%;
+            margin-bottom:20px;
+        }
+}        
