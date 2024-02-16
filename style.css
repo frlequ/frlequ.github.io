@@ -38,10 +38,12 @@
         h1 {
             font-size:90px;
             line-height:78px;
+			text-align: center;
             text-transform: uppercase;
         }
         h2{
 			font-size:60px;
+			line-height:58px;
             margin:40px 0;
             text-align: center;
             text-transform: uppercase;
@@ -101,8 +103,9 @@
             cursor: pointer;
             display: block; /* Make the button block level for centering */
             width: auto; /* Adjust width as needed */
-            margin: 20px auto 0; /* Center the button and add space above */
+            /*margin: 20px auto 0; /* Center the button and add space above */
             margin: 40px 0;
+			
             text-transform: uppercase;
             transition: background  .3s, scale .3s;
 
@@ -111,9 +114,9 @@
         }
 
 		.cover .button{
-			
+			margin: 0 40px ;
 			position: absolute;
-			bottom: 10%;	
+			bottom: 12%;	
 		}
 
         
@@ -214,4 +217,11 @@
             width: 100%;
             margin-bottom:20px;
         }
+		.charts{
+			
+			flex-direction:column;
+		}
+		.chart{
+		width:100%;	
+		}
 }        
