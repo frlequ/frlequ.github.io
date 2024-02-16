@@ -42,7 +42,6 @@
 			</div>
 				
 
-		
 	  
 
 			<div class="features-row">
@@ -64,7 +63,7 @@
 					<p>Easily install the integration through Home Assistant's HACS, ensuring a smooth setup process.</p>
 				</div>
 			</div>
-
+	
 			<h2>What's New?</h2>
 					<p>No more headaches with those local certificates to get access! Thanks to Informatika.si, we've upgraded this custom component to use their new API service, making everything way smoother and user-friendly. This means you'll get a better and more reliable connection to your electricity data, all within the Home Assistant ecosystem. Super cool, right?</p>
 					<p>And here's the cherry on top – with Home Assistant Config Glow, you don't even have to mess around with YAML files anymore to tweak your settings. This custom component brings the convenience of UI configuration right at your fingertips. Imagine just clicking through options to customize your setup, no coding required. That’s pretty awesome, isn’t it? It's all about making things simpler and letting you enjoy the cool stuff without the fuss.</p>
@@ -72,7 +71,14 @@
 					<p>Oh, and did I mention that the Home Assistant Moj Elektro custom integration is completely open source? Yeah, that's right! It's as cool as it gets. Having this gem in the open-source world means you can peek under the hood, tinker with it, or even contribute to making it better. Imagine tweaking your smart home to perfectly match your energy needs, all while being part of a community that's all about sharing and improving. It's like having the keys to the castle, allowing you to customize your energy management in ways you've never thought possible. </p>
 			
 
-			
+	</div>
+</div>
+ <div class="cover2">
+
+
+</div>	
+<div class="main">
+	<div class="container">		
 			<h2>Display Data</h2>
 				<p>Apex Chart Card is a great tool for displaying your energy stats in a neat and interactive graph, making it super easy to spot trends and keep track of your energy usage.</p>
 			<div class="charts">
@@ -82,144 +88,22 @@
 			<a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Get Moj Elektro for Home Assistant</a>			
 	</div>
 </div>
-
+<div class="main-footer">
+	<div class="container">		
+			<p>"The Moj Elektro API Integration for Home Assistant ('Integration') is an unofficial software created by an independent developer and is not endorsed, supported, or verified by Moj Elektro. Users who decide to implement or use this Integration in their Home Assistant setups do so entirely at their own risk. The developer of the Integration disclaims all responsibility and liability for any direct, indirect, incidental, consequential, special, or exemplary damages or losses that may arise from the use of, or inability to use, the Integration, including but not limited to damages to property, loss of data, loss of functionality, or any other form of financial or operational harm. By choosing to use this Integration, users acknowledge and agree that they are solely responsible for any outcomes, damages, or consequences that may result from such use, and agree to use the Integration cautiously and at their own discretion. It is highly recommended that users regularly backup their system data and thoroughly test the Integration in a safe environment before applying it to their live systems."</p>
+	</div>
+</div>
  
 
-    <script>
-        // Step 3: JavaScript to initialize the chart
-		
-		var apexConfig = {
-			
-			colors: ['var(--primary-chart-back)'],
-			
-			plotOptions: { 
-			  bar: { 
-				columnWidth: '100%' 
-			  } 
-			},
-		  chart: {
-		    type: 'bar', // Change to 'line', 'area', etc. for different chart types
-            
 
-			height: '180px',
-			width: '100%',
-			animations: {
-			  enabled: false
-			},
-			toolbar: {
-				show: false
-			}
-		  },
-		  dataLabels: {
-			enabled: false,
-			offsetY: -8,
-			style: {
-			  fontSize: '10px',
-			  fontFamily: 'Segoe UI'
-			},
-			background: {
-			  enabled: false
-			}
-		  },
-		  tooltip: {
-			enabled: false,
-			followCursor: true,
-			fixed: {
-			  enabled: true,
-			  position: 'topLeft',
-			  offsetY: 180
-			},
-			x: {
-			  format: 'dddd, d MMMM'
-			},
-
-			items: {
-			  display: 'flex'
-			}
-		  },
-
-		  stroke: {
-			colors: ['transparent'],
-			width: 1
-		  },
-		  xaxis: {
-			floating: true,
-			labels: {
-			  show: false
-			},
-			axisTicks: {
-			  show: false
-			},
-			axisBorder: {
-			  show: false
-			},
-			tooltip: {
-			  enabled: false
-			},
-			crosshairs: {
-			  show: true,
-			  width: 25,
-			  position: 'front',
-			  opacity: 0.2
-			}
-		  },
-		  yaxis: {
-			min: 0,
-			decimalsInFloat: 2,
-			tickAmount: 2,
-			floating: true,
-			labels: {
-			  show: true,
-			  offsetX: 31,
-			  offsetY: -6
-			}
-		  },
-		  grid: {
-			strokeDashArray: 2,
-			borderColor: '#666666',
-			padding: {
-			  left: 0,
-			  right: 0
-			}
-		  },
-		  series: [{
-                name: 'kWh Energy',
-                data: [14.26, 14.80, 16.92, 12.59, 12.23, 11.58, 11.93, 13.88, 11.82] // Random kWh data
-			}],
-		};
-
-        var options2 = {
-
-			series: [{
-				name: 'kWh Energy',
-				data: Array.from({ length: 96 }, () => parseFloat((Math.random() * (100 - 10) + 10).toFixed(2)))
-			}]
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chart"), apexConfig );
-        chart.render();
-		
-		apexConfig.series = options2.series;
-		
-		var chart = new ApexCharts(document.querySelector("#chart2"), apexConfig );
-        chart.render();
-    </script>
 </body>
 <script src='https://tympanus.net/Development/AnimatedHeaderBackgrounds/js/TweenLite.min.js'></script>
 <script src='https://tympanus.net/Development/AnimatedHeaderBackgrounds/js/EasePack.min.js'></script>
-<script src='dots.js'></script>
+<script src='js/dots.js'></script>
+<script src='js/apex.js'></script>
+<script src='js/parallax.js'></script>
 
 
-<script>
-    // Listen to the scroll event
-    window.addEventListener('scroll', function() {
-        var scrolledHeight= window.pageYOffset,
-            cover = document.querySelector('.cover');
 
-        // Adjust the background position
-        var coords = '50%' + (-scrolledHeight * 0.5) + 'px';
-        cover.style.backgroundPosition = coords;
-    });
-</script>
 
 </html>
