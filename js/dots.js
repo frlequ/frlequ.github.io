@@ -169,7 +169,7 @@
     }
 }());//@ sourceURL=pen.js
 
-
+/*
 // Function to update the height of .cover elements
 function updateCoverHeight() {
   // Get the height of the window (viewport)
@@ -190,3 +190,4 @@ updateCoverHeight();
 
 // Optionally, update the height whenever the window is resized
 window.addEventListener('resize', updateCoverHeight);
+*/

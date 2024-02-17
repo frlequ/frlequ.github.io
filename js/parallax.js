@@ -33,3 +33,10 @@ function calculatePosition(scrolledHeight, elementOffset) {
     // Adjust the multiplier (-0.5) based on desired parallax speed
     return (scrolledHeight - elementOffset) * -0.5;
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var screenHeight = window.innerHeight;
+    var divWithBackground = document.querySelector('.cover');
+    divWithBackground.style.height = screenHeight + 'px';
+});
