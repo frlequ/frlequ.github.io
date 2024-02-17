@@ -196,6 +196,8 @@
     z-index:4;
 	background: url(https://github.com/frlequ/homeassistant-mojelektro/raw/main/assets/home-assitant-mojelektro-api.jpg) no-repeat center center fixed;
 	transition: width 999999s;
+	transition: height 999999s;
+	transform: scale(1.0);
 	background-size:  auto auto;
 	background-size: cover; /* Adjusted to cover for full background cover */
 }  
