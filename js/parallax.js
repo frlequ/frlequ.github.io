@@ -13,7 +13,7 @@ window.addEventListener('scroll', function() {
     var coordsCover = '50%' + calculatePosition(scrolledHeight, coverOffset) + 'px';
     cover.style.backgroundPosition = coordsCover;
 
-    var coordsCover2 = '50%' + calculatePosition(scrolledHeight, cover2Offset) + 'px';
+    var coordsCover2 = '50%' + calculatePosition(scrolledHeight, cover2Offset+120) + 'px';
     cover2.style.backgroundPosition = coordsCover2;
 });
 
@@ -31,12 +31,14 @@ function getOffsetTop(elem) {
 // Function to calculate background position
 function calculatePosition(scrolledHeight, elementOffset) {
     // Adjust the multiplier (-0.5) based on desired parallax speed
-    return (scrolledHeight - elementOffset) * -0.5;
+    return (scrolledHeight - elementOffset) * +0.5;
 }
 
-
+/*
 document.addEventListener("DOMContentLoaded", function() {
     var screenHeight = window.innerHeight;
     var divWithBackground = document.querySelector('.cover');
     divWithBackground.style.height = screenHeight + 'px';
 });
+
+*/
