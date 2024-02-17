@@ -185,12 +185,17 @@
 }
 
 .cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+	
+	height: 100vh;
     width:100%;
-    min-height: 100vh; /* Adjusted to 100vh for full viewport height */
+    /*min-height: 100vh; */
     position:relative;
     z-index:4;
 	background: url(https://github.com/frlequ/homeassistant-mojelektro/raw/main/assets/home-assitant-mojelektro-api.jpg) no-repeat center center fixed;
-  
+	transition: width 999999s;
 	background-size:  auto auto;
 	background-size: cover; /* Adjusted to cover for full background cover */
 }  
@@ -202,7 +207,7 @@
     position:relative;
     z-index:4;
 	background: url(https://github.com/frlequ/homeassistant-mojelektro/raw/main/assets/home-assitant-moj-elektro-api-integration.jpg) no-repeat center center fixed;
-  
+	transition: width 999999s;
 	background-size:  auto auto;
 	background-size: cover; /* Adjusted to cover for full background cover */
 }   
