@@ -237,9 +237,21 @@ document.addEventListener("DOMContentLoaded", function() {
 				columnWidth: '100%' 
 			  } 
 			},
+		  theme: {
+			  mode: 'dark', 
+			  palette: 'palette1', 
+			  monochrome: {
+				  enabled: false,
+				  color: '#255aee',
+				  shadeTo: 'light',
+				  shadeIntensity: 0.65
+			  },
+		  },
 		  chart: {
 		    type: 'bar', // Change to 'line', 'area', etc. for different chart types
             
+
+			background: 'none',
 
 			height: '180px',
 			width: '100%',
@@ -252,7 +264,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		  },
 		  dataLabels: {
 			enabled: false,
-			offsetY: -8,
+			offsetY: 0,
 			style: {
 			  fontSize: '10px',
 			  fontFamily: 'Segoe UI'
@@ -262,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		  },
 		  tooltip: {
-			enabled: false,
+			enabled: true,
 			followCursor: true,
 			fixed: {
 			  enabled: true,
@@ -272,7 +284,12 @@ document.addEventListener("DOMContentLoaded", function() {
 			x: {
 			  format: 'dddd, d MMMM'
 			},
-
+			y: {
+				  formatter: undefined,
+				  title: {
+					  formatter: (seriesName) => seriesName,
+					},
+			},
 			items: {
 			  display: 'flex'
 			}
@@ -283,6 +300,10 @@ document.addEventListener("DOMContentLoaded", function() {
 			width: 1
 		  },
 		  xaxis: {
+			type: 'categories',
+			
+			categories: Array.from({ length: 15 }, (_, i) => new Intl.DateTimeFormat('en-US', { weekday: 'long', day: '2-digit', month: 'long' }).format(new Date(new Date().setDate(new Date().getDate() - 14 + i)))),
+			
 			floating: true,
 			labels: {
 			  show: false
@@ -324,22 +345,35 @@ document.addEventListener("DOMContentLoaded", function() {
 		  },
 		  series: [{
                 name: 'kWh Energy',
-                data: [14.26, 14.80, 16.92, 12.59, 12.23, 11.58, 11.93, 13.88, 11.82] // Random kWh data
+                data: Array.from({ length: 14 }, () => parseFloat((Math.random() * (11.90 - 0.001) ).toFixed(2)))
 			}],
 		};
 
         var options2 = {
 
 			series: [{
-				name: 'kWh Energy',
-				data: Array.from({ length: 96 }, () => parseFloat((Math.random() * (100 - 10) + 10).toFixed(2)))
-			}]
-        };
+				name: '15 min interval',
+				data: Array.from({ length: 96 }, () => parseFloat((Math.random() * (0.90 - 0.001) ).toFixed(2)))
+
+			}],
+			
+
+			xaxis: {
+				type: 'categories',
+				categories: Array.from({ length: 96 }, (_, i) => new Date(new Date().setHours(0, 0, 0, 0) + i * 15 * 60 * 1000).toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' })),
+				floating: true,
+				
+			}
+		};
+			
+			
+
 
         var chart = new ApexCharts(document.querySelector("#chart"), apexConfig );
         chart.render();
 		
 		apexConfig.series = options2.series;
+		apexConfig.xaxis = options2.xaxis;
 		
 		var chart = new ApexCharts(document.querySelector("#chart2"), apexConfig );
         chart.render();
