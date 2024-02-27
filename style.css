@@ -143,21 +143,43 @@
             width: auto; /* Adjust width as needed */
             /*margin: 20px auto 0; /* Center the button and add space above */
             margin: 40px 0;
+			margin: 0 40px ;
 			
+			font-weight:400;
             text-transform: uppercase;
             transition: background  .3s, scale .3s;
-
+	
 			justify-self: center;
 			align-self: center;
         }
 
-		.cover .button{
-			margin: 0 40px ;
-			position: absolute;
-			bottom: 12%;	
-		}
 
-        
+		.cover .get{
+			position: absolute;
+			bottom: 12%;
+			margin-top:0px;
+		}
+		.cover .get .button{
+			margin: 0 40px ;
+		}
+		.get {
+			width:100%;
+			/*background:red;*/
+			font-weight:100;
+			text-transform: uppercase;
+			font-size: 18px;
+			margin-top:80px;
+			overflow: hidden;
+		}
+		.get span{
+			transform: scale(6,1);
+			display: inline-block;
+			padding: 0 20px;
+		}
+		
+
+
+
         .button:hover, .feature-box:hover {
             background-color: #758290;
             scale: 1.01;
@@ -269,19 +291,22 @@
 }
 
 
+
+
 /* Use a media query to add a breakpoint at 800px: */
 @media screen and (max-width: 600px) {
         h1 {
            font-size:58px;
             line-height:56px;
         }
+		
         h2 {
            font-size:48px;
             line-height:46px;
         }
+		
         .features-row {
-        flex-direction: column;
-        
+			flex-direction: column;
         }
         
         .feature-box {
@@ -293,10 +318,14 @@
 			flex-direction:column;
 		}
 		.chart{
-		width:100%;	
+			width:100%;	
 		}
 		
 		.cover2{
-		background-size: auto auto;
+			background-size: auto auto;
 		}
+		
+		.main{
+			padding: 40px 20px;
+		}	
 }        
