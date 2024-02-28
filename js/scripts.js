@@ -61,7 +61,7 @@
             p1.closest = closest;
         }
         for (var i in points) {
-            var c = new Circle(points[i], 2 + Math.random() * 2, 'rgba(255,255,255,0.3)');
+            var c = new Circle(points[i], 0 + Math.random() * 2, 'rgba(255,255,255,0.3)');
             points[i].circle = c;
         }
     }
@@ -114,7 +114,7 @@
                 if (Math.abs(getDistance(target, points[i])) < 4000) {
                     points[i].active = 0.3;
                     points[i].circle.active = 0.6;
-                } else if (Math.abs(getDistance(target, points[i])) < 20000) {
+                } else if (Math.abs(getDistance(target, points[i])) < 200000) {
                     points[i].active = 0.1;
                     points[i].circle.active = 0.3;
                 } else if (Math.abs(getDistance(target, points[i])) < 400000) {
@@ -147,7 +147,7 @@
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p.closest[i].x, p.closest[i].y);
-            ctx.strokeStyle = 'rgba(156,217,249,' + p.active + ')';
+            ctx.strokeStyle = 'rgba(156,217,249,' + p.active/2 + ')';
             ctx.stroke();
         }
     }

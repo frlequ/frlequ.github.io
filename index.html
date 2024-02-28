@@ -26,20 +26,21 @@
         <h1>Moj Elektro API Home Assistant Integration</h1>
 		<div class="get">
 			<a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Get Moj Elektro for Home Assistant</a>
-			<span>-</span> Free from Github <span>-</span>
+			<span>-</span>View code on GitHub <span>-</span>
 		</div>
 	</div>
 </div>		
 
 <div class="main">
 	<div class="container">
+			<div class="responsive-image-container2">
+				<img src="home-assistant-wordmark-with-margins-color-on-dark.png" alt="Energy Conservation Image" width="100px">
+			</div>
 			<p class="first">
 				Hey everyone! Just dropping in to share some great news about the latest update for the Home Assistant Moj Elektro integration. It's now super straightforward to link your Moj Elektro electric meter info directly to Home Assistant using HACS. This new version is a huge improvement, simplifying how you access your Moj Elektro electricity data with an updated API.
 			</p>
 
-			<div class="responsive-image-container2">
-				<img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Home_Assistant_logo_%282023%29.svg/1200px-Home_Assistant_logo_%282023%29.svg.png" alt="Energy Conservation Image" width="20px">
-			</div>
+
 				
 			<h2>What's Moj Elektro?</h2>
 	  <p>Moj Elektro is a cool, free online platform that lets you check out your electricity usage no matter where you are or who supplies your power. It's like having a personal power dashboard where you can see everything from how much electricity you used last month to detailed info every 15 minutes. It's super handy for anyone wanting to keep an eye on their energy consumption and even manage it better. Now, with a Home Assistant custom component you can integrate energy data directly to your platform.
@@ -64,12 +65,42 @@
 					<p>Easily install the integration through Home Assistant's HACS, ensuring a smooth setup process.</p>
 				</div>
 			</div>
+
+
+
 	
 			<h2>What's New?</h2>
-					<p>No more headaches with those local certificates to get access! Thanks to Informatika.si, we've upgraded this custom component to use their new API service, making everything way smoother and user-friendly. This means you'll get a better and more reliable connection to your electricity data, all within the Home Assistant ecosystem. Super cool, right?</p>
-					<p>And here's the cherry on top – with Home Assistant Config Glow, you don't even have to mess around with YAML files anymore to tweak your settings. This custom component brings the convenience of UI configuration right at your fingertips. Imagine just clicking through options to customize your setup, no coding required. That’s pretty awesome, isn’t it? It's all about making things simpler and letting you enjoy the cool stuff without the fuss.</p>
+					<p>No more headaches with those local certificates to get access! Thanks to Informatika.si, we've upgraded this custom component to use their <b>new API service</b>, making everything way smoother and user-friendly. This means you'll get a better and more reliable connection to your electricity data, all within the Home Assistant ecosystem. Super cool, right?</p>
+					<p>And here's the cherry on top – with <b>Home Assistant Config Glow</b>, you don't even have to mess around with YAML files anymore to tweak your settings. This custom component brings the convenience of UI configuration right at your fingertips. Imagine just clicking through options to customize your setup, no coding required. That’s pretty awesome, isn’t it? It's all about making things simpler and letting you enjoy the cool stuff without the fuss.</p>
+
+	</div>
+</div>
+
+<div class="main solid">
+	<div class="container source">		
+
 			<h2>Open Source</h2>
-					<p>Oh, and did I mention that the Home Assistant Moj Elektro custom integration is completely open source? Yeah, that's right! It's as cool as it gets. Having this gem in the open-source world means you can peek under the hood, tinker with it, or even contribute to making it better. Imagine tweaking your smart home to perfectly match your energy needs, all while being part of a community that's all about sharing and improving. It's like having the keys to the castle, allowing you to customize your energy management in ways you've never thought possible. </p>
+<div class="code-editor">
+<pre><code class="python">
+<span class="comment">"""Validate the token by using the getMeterReadings method."""</span>
+<span class="keyword">async def</span> validate_token(self):
+    <span class="keyword">try</span>:
+        validate = <span class="keyword">await</span> self.getData()
+        <span class="keyword">return</span> validate <span class="keyword">is not</span> None
+    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:
+        _LOGGER.error(<span class="string">f"Error during token validation: {e}"</span>)
+        <span class="keyword">return</span> False
+</code></pre>
+
+<pre><code class="python">
+<span class="keyword">async def</span> getMeterReadings(self, rType=<span class="keyword">None</span>):
+    <span class="string">"""Primary API calls."""</span>      
+
+</code></pre>
+
+
+</div>
+					<p>Oh, and did I mention that the Home Assistant Moj Elektro custom integration is completely <b>open source</b>? Yeah, that's right! It's as cool as it gets.</p> <p> Having this gem in the open-source world means you can peek under the hood, tinker with it, or even contribute to making it better. Imagine tweaking your smart home to perfectly match your energy needs, all while being <b>part of a community</b> that's all about sharing and improving. It's like having the keys to the castle, allowing you to customize your energy management in ways you've never thought possible. </p>
 			
 
 	</div>
@@ -80,8 +111,8 @@
 </div>	
 <div class="main">
 	<div class="container">		
-			<h2>Display Data</h2>
-				<p>Apex Chart Card is a great tool for displaying your energy stats in a neat and interactive graph, making it super easy to spot trends and keep track of your energy usage.</p>
+			<h2>Visualise</h2>
+				<p><b>Apex Chart Card</b> is a great additional Home Assistant Custom Card for displaying your energy stats in a neat and interactive graph, making it super easy to spot trends and keep track of your energy usage.</p>
 			<div class="charts">
 			   <div id="chart" class="chart"></div>
 			   <div id="chart2" class="chart"></div>
@@ -89,7 +120,7 @@
 			
 		<div class="get">
 			<a href="https://github.com/frlequ/homeassistant-mojelektro" class="button">Get Moj Elektro for Home Assistant</a>
-			<span>-</span> Free from Github <span>-</span>
+			<span>-</span>View code on GitHub <span>-</span>
 		</div>
 	</div>
 </div>
