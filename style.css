@@ -75,21 +75,34 @@
             
         }
         h1 {
+			
             font-size:90px;
-            line-height:78px;
+            line-height:88px;
 			text-align: center;
             text-transform: uppercase;
+			margin-bottom:10px;
+
+background: #F4F8FA;
+background: linear-gradient(to right, #F4F8FA 32%, #6393C1 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
         }
         h2{
+
 			font-size:60px;
 			line-height:58px;
-            margin:40px 0;
-			margin-top: 80px;
+            /*margin:40px 0;*/
+			/*margin-top: 80px;*/
             text-align: center;
             text-transform: uppercase;
         }
         h3{
-            font-size:20px;
+			margin: 0;
+			padding: 0;
+            font-size:56px;
+            line-height:56px;
+			text-align: center;
+			font-weight: 100;
             text-transform: uppercase;
         }
         
@@ -108,10 +121,10 @@
             width: calc(33.333% - 20px);
             padding: 20px;
             box-sizing: border-box;
-            
+            position: relative;
             border: 0px solid #e0e0e0;
             border-radius: 8px;
-            background-color: var(--primary-elements-back);
+            /*background-color: var(--primary-elements-back);*/
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -122,7 +135,16 @@
         .feature-box p {
 			font-size:18px;
             margin:0px 0 ;
+			
         }
+		
+		  .feature-box-space {
+			content: '';
+
+			width: 1px; /* Width of the outline */
+			background: rgb(255,255,255);
+			background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+		  }
 
         .mdi {
             font-size: 58px;
@@ -251,10 +273,10 @@
 		.container {
 			max-width: 800px;
 			margin: auto;
-			/*padding: 20px 0;*/
+			padding: 20px 0;
 			z-index:4;
 			position:relative;
-			display: grid;
+			/*display: grid;*/
 			height:100%;
 		}
 
@@ -374,7 +396,10 @@
             line-height:46px;
 
         }
-		
+		h3{
+			font-size: 32px;
+			line-height: 32px;
+		}
         .features-row {
 			flex-direction: column;
         }
